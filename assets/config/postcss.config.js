@@ -12,6 +12,6 @@ module.exports = {
         })
       : null,
 
-    require("autoprefixer")(),
+    require("autoprefixer")()
   ]
 };

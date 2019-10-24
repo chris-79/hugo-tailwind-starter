@@ -15,10 +15,12 @@ module.exports = {
       creamery: '#D6D2C4',
       gray: '#FAFAFA'
     },
-    fontFamily: {
-      'serif': 'Merriweather, Georgia, "Times New Roman", Times, serif',
-      'sans': '"Merriweather Sans", "Tahoma", "Helvetica Neue", Arial, sans-serif',
-      'narrow': 'Oswald, Impact, Tahoma, "Arial Narrow", Arial, sans-serif',
+    extend: {
+      fontFamily: {
+        'serif': 'Merriweather, Georgia, Times New Roman, Times, serif',
+        'sans': '"Merriweather Sans", Tahoma, "Helvetica Neue", Arial, sans-serif',
+        'narrow': 'Oswald, Impact, Tahoma, "Arial Narrow", Arial, sans-serif'
+      }
     }
   },
 

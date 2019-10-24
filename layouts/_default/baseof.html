@@ -25,8 +25,9 @@
     {{ block "extra_css" . }}{{ end }}
     {{ $cssOpts := (dict "targetPath" "styles/main.css" "enableSourceMap" true ) }}
     {{ $postcssOpts := (dict "config" "assets/config/postcss.config.js" ) }}
+    {{ $fonts := resources.Get "styles/fonts.scss" | toCSS $cssOpts | postCSS $postcssOpts }}
     {{ $styles := resources.Get "styles/main.scss" | toCSS $cssOpts | postCSS $postcssOpts }}
-    {{ $stylesAll := slice $styles | resources.Concat "styles/main.css" | minify }}
+    {{ $stylesAll := slice $fonts $styles | resources.Concat "styles/main.css" | minify }}
     <link rel="stylesheet" href="{{ $stylesAll.Permalink }}" media="screen" crossorigin="anonymous">
   </head>
   <body>
